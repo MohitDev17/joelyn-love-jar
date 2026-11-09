@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Well Do You Know Me? ♡</title>
+<style>
+:root{--pink:#f6c8d8;--deep:#a74770;--ink:#573747;--paper:#fffafd}*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Georgia,serif;color:var(--ink);background:radial-gradient(circle at 15% 10%,#fff 0 5%,transparent 28%),linear-gradient(145deg,#fff0f5,#f8dce8 55%,#fcecf2);display:grid;place-items:center;padding:22px}.card{width:min(100%,560px);background:#ffffffdc;border:1px solid #fff;border-radius:28px;padding:28px;box-shadow:0 18px 60px #a7477020;text-align:center}.tiny{letter-spacing:3px;text-transform:uppercase;color:#b66b8a;font:11px Arial,sans-serif}.heart{font-size:35px;margin:8px}.title{font-size:clamp(30px,8vw,44px);margin:8px 0;color:#a74770}.sub{font:14px/1.6 Arial,sans-serif;color:#916b7b}.progress{height:7px;background:#f6e1e9;border-radius:20px;margin:24px 0 8px;overflow:hidden}.bar{height:100%;width:0;background:#c66f94;transition:width .3s}.count{font:12px Arial,sans-serif;color:#a16c81}.question{font-size:23px;line-height:1.35;margin:25px 0 20px}.answers{display:grid;gap:10px}.answer{border:1px solid #efd0dc;background:#fff9fc;color:#70465a;padding:14px;border-radius:15px;font:15px Arial,sans-serif;cursor:pointer;transition:.2s}.answer:hover{background:#fae6ee;transform:translateY(-1px)}.answer:disabled{cursor:default}.answer.correct{background:#e7f5eb;border-color:#8fc5a0;color:#28613b}.answer.wrong{background:#fff0ef;border-color:#e3a5a0;color:#98433f}.feedback{min-height:25px;margin:14px 0;font:13px Arial,sans-serif;color:#95677a}.next,.restart{border:0;border-radius:30px;background:#b6537c;color:white;padding:13px 25px;font: bold 14px Arial,sans-serif;cursor:pointer}.next:disabled{opacity:.4;cursor:default}.result{font-size:54px;color:#b6537c;margin:10px}.resultText{font:15px/1.7 Arial,sans-serif}.footer{font:11px Arial,sans-serif;color:#b18b9b;margin-top:22px}.hidden{display:none}
+</style></head>
+<body><main class="card"><div class="tiny">A little challenge for Joelyn</div><div class="heart">♡</div><h1 class="title">How well do you know me?</h1><p class="sub">Let's see how much attention you've been paying to your favourite human. No pressure… okay, maybe a little. 🤭</p>
+<section id="quiz"><div class="progress"><div class="bar" id="bar"></div></div><div class="count" id="count">Question 1 of 10</div><div class="question" id="question"></div><div class="answers" id="answers"></div><div class="feedback" id="feedback"></div><button class="next" id="next" disabled>Next question ♡</button></section>
+<section id="result" class="hidden"><div class="result" id="score"></div><h2 id="resultTitle">You did it!</h2><p class="resultText" id="resultText"></p><p class="resultText">No matter your score, you already know the most important thing: I really, really like you. ❤️</p><button class="restart" onclick="restart()">Play again</button></section>
+<div class="footer">Made with love, just for Joelyn · ♡</div></main>
+<script>
+const questions=[
+{q:'What is my dream/favourite car?',a:['Porsche 918 Spyder','Nissan GT-R','Lamborghini Aventador','McLaren 720S'],c:0,why:'The Porsche 918 Spyder. An absolute beauty.'},
+{q:'Which programming language have I been learning?',a:['Java','Python','C++','Swift'],c:1,why:'Python has been part of my coding journey.'},
+{q:'Which laptop do I use?',a:['HP Omen','MacBook Pro','Lenovo LOQ','ASUS TUF'],c:2,why:'My Lenovo LOQ is my coding and gaming machine.'},
+{q:'Which game was I seriously into competitively?',a:['Fortnite','Valorant','Apex Legends','CS2'],c:1,why:'Valorant had a big place in my gaming era.'},
+{q:'What food ingredient do I absolutely hate?',a:['Tomatoes','Mushrooms','Lettuce','Onions'],c:2,why:'Lettuce is definitely not welcome.'},
+{q:'What kind of jokes do I make you laugh at?',a:['Super clever jokes','My dumb jokes that make zero sense','Dad jokes only','I never joke'],c:1,why:'And I love that you laugh at them anyway.'},
+{q:'What happens to me when you kiss me?',a:['I start singing','I forget what I was saying','I fall asleep','I become serious'],c:1,why:'I turn into a goldfish and forget everything.'},
+{q:'What do I love about the way you message me?',a:['You reply to each message one by one','You only send voice notes','You leave me on read','You send only emojis'],c:0,why:'I notice that you respond to every message and react to my reels.'},
+{q:'What do I enjoy when it comes to you teasing me?',a:['I secretly hate it','I love getting teased by you','I pretend not to notice','I always tease you first'],c:1,why:'Your teasing is one of my favourite things.'},
+{q:'Where do I feel I can come whenever I am sad?',a:['The gym','A gaming session','To you','A long drive'],c:2,why:'You feel like a safe place to me.'}
+];
+let index=0,score=0,locked=false;
+const $=id=>document.getElementById(id);
+function render(){locked=false;$('count').textContent=`Question ${index+1} of ${questions.length}`;$('bar').style.width=`${index/questions.length*100}%`;$('question').textContent=questions[index].q;$('answers').innerHTML='';$('feedback').textContent='';$('next').disabled=true;$('next').textContent=index===questions.length-1?'See my result ♡':'Next question ♡';questions[index].a.forEach((v,i)=>{let b=document.createElement('button');b.className='answer';b.textContent=v;b.onclick=()=>choose(i);$('answers').appendChild(b)});}
+function choose(i){if(locked)return;locked=true;let q=questions[index];[...$('answers').children].forEach((b,j)=>{b.disabled=true;if(j===q.c)b.classList.add('correct');else if(j===i)b.classList.add('wrong')});if(i===q.c){score++;$('feedback').textContent='You got it! '+q.why}else{$('feedback').textContent='Not quite! '+q.why}$('next').disabled=false;}
+$('next').onclick=()=>{if(index<questions.length-1){index++;render()}else finish()};
+function finish(){$('quiz').classList.add('hidden');$('result').classList.remove('hidden');$('bar').style.width='100%';$('score').textContent=`${score}/${questions.length}`;let title=score>=9?'Okay, you know me TOO well! 🥹':score>=6?'You pay attention, and I love that. ❤️':score>=3?'We have more memories to make! 💗':'Looks like I have to tell you more about me. 🤭';$('resultTitle').textContent=title;$('resultText').textContent=`You got ${score} out of ${questions.length} right. Thank you for wanting to know all the little things about me.`;}
+function restart(){index=0;score=0;$('result').classList.add('hidden');$('quiz').classList.remove('hidden');render()}render();
+</script></body></html>
