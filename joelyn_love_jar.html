@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#fff0f4" />
+<title>A Little Jar of Love for Joelyn ♡</title>
+<style>
+  :root{--pink:#f4a9bf;--deep:#a84d70;--ink:#684052;--cream:#fffaf7;--rose:#ffe3eb}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:radial-gradient(circle at 15% 10%,#fff 0 2px,transparent 3px),linear-gradient(145deg,#fff8f7,#ffeaf0 55%,#fff4ed);overflow-x:hidden}
+  .wrap{width:min(760px,92vw);margin:auto;padding:42px 0 55px;text-align:center;position:relative;z-index:1}
+  .eyebrow{font:600 11px/1.4 Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#bd7890}
+  h1{font-size:clamp(37px,8vw,62px);font-weight:normal;line-height:1.02;margin:14px 0 12px;color:#9d4c6c}
+  .subtitle{font-size:17px;line-height:1.6;margin:0 auto;max-width:470px;color:#916477}
+  .for{display:inline-block;margin:23px 0 10px;padding:8px 17px;border:1px solid #f1c2d0;border-radius:999px;background:#ffffff9c;font:12px Arial,sans-serif;letter-spacing:1px;color:#a65373}
+  .jar-area{position:relative;margin:8px auto 12px;width:260px;height:290px;display:grid;place-items:center}
+  .jar{width:190px;height:205px;position:relative;border:4px solid #d8a8b7;border-top:0;border-radius:20px 20px 42px 42px;background:linear-gradient(100deg,#ffffff9c,#f9dce7a8 45%,#ffffff8a);box-shadow:inset -14px 0 25px #e6aabd33,0 18px 35px #b66b8424;cursor:pointer;transition:transform .25s}
+  .jar:hover{transform:translateY(-5px) rotate(-1deg)}
+  .jar:before{content:'';position:absolute;left:-8px;right:-8px;top:-13px;height:18px;border:4px solid #d8a8b7;border-radius:8px;background:linear-gradient(#fce9ef,#edc4d1);box-shadow:0 4px 7px #a65d7820}
+  .jar:after{content:'';position:absolute;left:17px;top:20px;width:18px;height:135px;border-radius:20px;background:#fff9;filter:blur(1px)}
+  .jar-label{position:absolute;left:50%;top:77px;transform:translateX(-50%);width:130px;padding:13px 7px;background:#fff7f4e8;border:1px solid #edc5d0;border-radius:7px;color:#a65373;font-size:15px;line-height:1.35;box-shadow:0 4px 10px #99506c16;pointer-events:none}
+  .jar-label small{display:block;font:10px Arial,sans-serif;letter-spacing:1px;margin-top:5px}
+  .paper{position:absolute;width:33px;height:24px;border-radius:4px;background:#fff2c9;border:1px solid #e7cda2;box-shadow:0 2px 4px #88566a20;transform:rotate(var(--r));}
+  .p1{left:35px;bottom:20px;--r:-17deg;background:#f9d9e4}.p2{left:77px;bottom:15px;--r:12deg;background:#fff0c8}.p3{right:36px;bottom:22px;--r:21deg;background:#e9dff9}.p4{right:68px;bottom:55px;--r:-12deg;background:#f8d5d2}.p5{left:60px;bottom:60px;--r:9deg;background:#fff0c8}
+  .spark{position:absolute;color:#d88aa5;font-size:23px;animation:twinkle 2.4s infinite ease-in-out}.s1{left:10px;top:48px}.s2{right:14px;top:75px;animation-delay:.8s}.s3{right:20px;bottom:22px;animation-delay:1.2s}
+  @keyframes twinkle{50%{transform:scale(1.3) rotate(15deg);opacity:.55}}
+  .hint{font:12px Arial,sans-serif;color:#a9788a;margin:0 0 22px}
+  button{border:0;cursor:pointer;font:14px Arial,sans-serif;transition:transform .2s,box-shadow .2s}
+  button:hover{transform:translateY(-2px)}
+  .primary{background:linear-gradient(135deg,#d77f9e,#b85e80);color:white;border-radius:999px;padding:14px 24px;box-shadow:0 9px 20px #b45d7a35}
+  .secondary{background:#fff9;border:1px solid #edc4d0;color:#a65373;border-radius:999px;padding:11px 17px}
+  .counter{font:12px Arial,sans-serif;color:#a9788a;margin:18px 0 0}
+  .note-panel{display:none;position:fixed;inset:0;background:#59334470;z-index:5;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(5px)}
+  .note-panel.show{display:flex}
+  .note-card{position:relative;width:min(420px,100%);padding:36px 27px 28px;border-radius:20px;background:linear-gradient(145deg,#fffdf9,#fff0f4);box-shadow:0 25px 70px #4d24374a;border:1px solid #f3d4dd;animation:pop .25s ease-out}
+  @keyframes pop{from{transform:translateY(12px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+  .note-number{font:11px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#c17d95}
+  .note-heart{font-size:28px;margin:14px 0}
+  .note-text{font-size:25px;line-height:1.5;color:#96506c;margin:0 0 25px}
+  .close{position:absolute;right:14px;top:12px;background:transparent;color:#b47b8e;font-size:24px;padding:4px 8px}
+  .note-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .footer{margin-top:46px;font-size:13px;color:#b08091}
+  .footer span{color:#c46f8e}
+  .final{display:none;margin:28px auto 0;max-width:520px;padding:24px;border:1px solid #f0c8d4;border-radius:18px;background:#ffffffa8;line-height:1.8}
+  .final.show{display:block;animation:pop .35s ease-out}
+  .final h2{font-weight:normal;color:#a65373;font-size:28px;margin:0 0 10px}
+  .final p{margin:0;font-size:17px}
+  .hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .float-heart{position:absolute;bottom:-30px;color:#e69ab2;opacity:.55;animation:rise linear forwards}
+  @keyframes rise{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+  @media(max-width:420px){.wrap{padding-top:32px}.jar-area{transform:scale(.92);margin:0 auto -5px}.note-text{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<main class="wrap">
+  <div class="eyebrow">a little something made with love</div>
+  <h1>A Little Jar<br>of Love ♡</h1>
+  <p class="subtitle">Thirty little reminders of all the reasons<br>you make my world a sweeter place.</p>
+  <div class="for">MADE JUST FOR J O E L Y N</div>
+  <div class="jar-area">
+    <span class="spark s1">✧</span><span class="spark s2">♡</span><span class="spark s3">✦</span>
+    <div class="jar" id="jar" role="button" tabindex="0" aria-label="Open a love note">
+      <i class="paper p1"></i><i class="paper p2"></i><i class="paper p3"></i><i class="paper p4"></i><i class="paper p5"></i>
+      <div class="jar-label">Reasons I<br>Love You<small>♡ JOELYN ♡</small></div>
+    </div>
+  </div>
+  <p class="hint">Pick a little note from the jar whenever you need a smile.</p>
+  <button class="primary" id="draw">Pick a love note ♡</button>
+  <div class="counter" id="counter">30 little reasons waiting for you</div>
+  <section class="final" id="final">
+    <h2>And one last thing… ♡</h2>
+    <p>Joelyn, these are only 30 reasons. I could fill a thousand jars and still find new things to love about you. Thank you for being you, for making me laugh, and for making even the ordinary moments feel special. I choose you, today and every day. Happy monthsary, my love. ♡</p>
+    <p style="margin-top:16px;color:#ad6480">— Your favourite goldfish 🐟</p>
+  </section>
+  <div class="footer">made for <span>Joelyn</span>, with all my heart ♡</div>
+</main>
+<div class="note-panel" id="panel" aria-modal="true" role="dialog" aria-labelledby="noteText">
+  <div class="note-card">
+    <button class="close" id="close" aria-label="Close">×</button>
+    <div class="note-number" id="noteNumber">A little reason</div>
+    <div class="note-heart">♡</div>
+    <p class="note-text" id="noteText"></p>
+    <div class="note-actions">
+      <button class="secondary" id="again">Another one</button>
+      <button class="primary" id="done">Keep this one ♡</button>
+    </div>
+  </div>
+</div>
+<script>
+const reasons = [
+"I fell for you from the very first day, and I'd do it all over again.",
+"Your smile has a way of making my whole day better.",
+"Every time you kiss me, I forget what I was saying and turn into a goldfish.",
+"I love that I can come to you whenever I'm feeling sad.",
+"You laugh at my dumb jokes, even when they make absolutely no sense.",
+"I secretly love getting teased by you.",
+"I love how you reply to my messages one by one. It makes me feel heard.",
+"I love how you react to the reels I send you. Every single one feels special.",
+"You make it so easy for me to be myself.",
+"Your little expressions are some of my favourite things.",
+"I could listen to you talk for hours and never get bored.",
+"You make ordinary moments feel like memories I want to keep forever.",
+"I love the way you make me smile without even trying.",
+"You are the person I want to tell about every little thing that happens.",
+"I love how playful we can be together.",
+"Even a tiny moment with you can become the best part of my day.",
+"I love your laugh. I hope I get to hear it a million more times.",
+"You make me feel lucky in ways I don't always know how to explain.",
+"I love that we can be silly together and still be completely ourselves.",
+"I miss you in the middle of doing the most random things.",
+"I love the little ways you show me that you care.",
+"You make my heart feel all soft and stupid—in the best way.",
+"I love having someone as lovely as you to make memories with.",
+"I want to keep learning all the little things that make you, you.",
+"You make me look forward to tomorrow because I get another day with you.",
+"I love that your happiness matters so much to me.",
+"You are my favourite notification.",
+"I love every hug, every kiss, every laugh, and every little moment in between.",
+"Thank you for being patient with my nonsense and loving me through it.",
+"Because you're you, Joelyn. And that's my favourite reason of all."
+];
+let remaining = [...reasons.keys()];
+const panel=document.getElementById('panel'), noteText=document.getElementById('noteText'), noteNumber=document.getElementById('noteNumber'), counter=document.getElementById('counter'), final=document.getElementById('final');
+function drawNote(){
+ if(!remaining.length){final.classList.add('show');counter.textContent='You found all 30 reasons. But there are a million more. ♡';return;}
+ const pick=Math.floor(Math.random()*remaining.length), index=remaining.splice(pick,1)[0];
+ noteNumber.textContent=`little reason ${30-remaining.length} of 30`;
+ noteText.textContent=reasons[index];
+ counter.textContent=`${remaining.length} little ${remaining.length===1?'reason':'reasons'} left in the jar`;
+ panel.classList.add('show');
+ if(!remaining.length) final.classList.add('show');
+}
+function closeNote(){panel.classList.remove('show')}
+document.getElementById('draw').addEventListener('click',drawNote);
+document.getElementById('jar').addEventListener('click',drawNote);
+document.getElementById('jar').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();drawNote()}});
+document.getElementById('close').addEventListener('click',closeNote);
+document.getElementById('done').addEventListener('click',closeNote);
+document.getElementById('again').addEventListener('click',drawNote);
+panel.addEventListener('click',e=>{if(e.target===panel)closeNote()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNote()});
+function makeHeart(){const h=document.createElement('span');h.className='float-heart';h.textContent=Math.random()>.5?'♡':'♥';h.style.left=Math.random()*100+'%';h.style.fontSize=(12+Math.random()*17)+'px';h.style.animationDuration=(8+Math.random()*7)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),16000)}
+setInterval(makeHeart,1100);
+</script>
+</body>
+</html>
